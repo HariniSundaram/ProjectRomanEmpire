@@ -2,18 +2,18 @@
 <html>
 <head>
     <title>Freight Management Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
     <!-- Sidebar -->
-    <div id="sidebar" class="sidebar">
-        <!-- Menu Icon to open sidebar -->
-        <button id="menuIcon" class="menu-icon">&#9776; Menu</button>
-        
-        <!-- Content within the sidebar -->
-        <div class="sidebar-content">
-            <button id="schedulerButton" class="sidebar-button">Open Scheduler</button>
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="menu-icon" onclick="toggleDropdown()">&#9776;</div>
+        <div class="dropdown-content" id="dropdownContent">
+            <a href="#">Shipment Status</a>
+            <a href="#">Option 2</a>
+            <a href="#">Option 3</a>
         </div>
     </div>
 
@@ -22,5 +22,25 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="/static/js/script.js"></script>
     <script src="/static/js/sidebar.js"></script>
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("dropdownContent");
+            dropdownContent.classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-icon')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
