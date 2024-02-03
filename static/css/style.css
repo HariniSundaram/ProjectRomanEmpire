@@ -70,5 +70,21 @@ body {
     padding: 16px;
   }
   
-  
-  
+
+#routeInfoContainer {
+    display: flex;
+    flex-direction: row; /* Adjust as needed for layout */
+    align-items: stretch;
+}
+
+#routeMap {
+    flex: 1; /* Adjust as needed for layout */
+    /* Additional styles for your map container */
+}
+
+#routeInfo {
+    flex: 1; /* Adjust as needed for layout */
+    margin: 20px;
+    padding: 20px;
+    /* Add additional styling as needed */
+}
