@@ -6,3 +6,69 @@ body {
 /* #map {
     /* Adjust height as necessary */
     /* height: 100vh; */ 
+/* Sidebar styles */
+.sidebar {
+    height: 100%;
+    width: 0; /* Width is 0 to hide the sidebar by default */
+    position: fixed; /* Fixed position */
+    z-index: 1001; /* Above the map */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Color of sidebar */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    transition: 0.5s; /* Smooth transition for opening/closing */
+    padding-top: 60px; /* Space for the menu icon */
+  }
+  
+  /* Menu Icon styles */
+  .menu-icon {
+    position: absolute; /* Position it relative to the nearest positioned ancestor or to the document */
+    z-index: 1002; /* Above the sidebar */
+    top: 20px; /* 20px from the top */
+    left: 20px; /* 20px from the left */
+    cursor: pointer; /* Mouse cursor becomes pointer when hovered */
+    /* Add more styling as needed */
+  }
+  
+  /* When sidebar is open, it should have a width */
+  .open-sidebar {
+    width: 250px; /* Adjust as needed */
+  }
+  
+  .menu-icon {
+    z-index: 1000; /* Ensure it's higher than the map's z-index */
+    position: absolute; /* Take it out of normal flow and position it */
+    top: 10px; /* Distance from the top of the page */
+    left: 10px; /* Distance from the left of the page */
+    background-color: #fff; /* Background color for visibility */
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  .sidebar-button {
+    text-align: left;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sidebar-button:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Style page content - use this if you want to push the content to the right when you open the sidebar */
+  .main-content {
+    transition: margin-left 0.5s;
+    padding: 16px;
+  }
+  
+  
+  
