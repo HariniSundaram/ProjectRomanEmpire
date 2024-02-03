@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
             color: getColor(index),
             weight: 4
         }).addTo(map);
-        polyline.on('click', function() {
-            window.location.href = `/route-info?route=${index}`; // Assuming you have a route-info endpoint
-        });
+        // polyline.on('click', function() {
+        //     window.location.href = `/route-info?route=${index}`; // Assuming you have a route-info endpoint
+        // });
 
         // Add markers for the start and end points
         L.marker(correctedRoute[0]).addTo(map).bindPopup('Start of Route ' + (index + 1));

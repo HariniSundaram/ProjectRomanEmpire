@@ -18,7 +18,7 @@ def route_details(route_index):
     else:
         return jsonify({"error": "Route not found"}), 404
 
-# Route for displaying information for a specific route
+# # Route for displaying information for a specific route
 @app.route('/route-info')
 def route_info():
     return render_template('route_info.html')
