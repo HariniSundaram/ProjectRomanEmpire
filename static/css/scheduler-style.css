@@ -1,0 +1,93 @@
+
+/* Updated Global Settings with more color */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    margin: auto;
+    height: 100vh;
+    display: flex; /* Remain as flex container */
+    /* Removed centering to allow items to align from left to right */
+}
+
+h1 {
+    color: #fff; /* Updated color for better contrast */
+    margin-bottom: 20px;
+    text-align: center; /* Ensure the title is centered */
+}
+
+/* Updated Form Styles */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 90%; /* Make form width responsive */
+    max-width: 500px; /* New: Max width for form */
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='date'] {
+    width: calc(100% - 20px); /* New: Adjust width to consider padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* New: Include padding and border in the element's total width and height */
+}
+
+input[type='text']:focus,
+input[type='number']:focus,
+input[type='date']:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button Styles */
+input[type='submit'] {
+    display: block;
+    width: calc(100% - 20px); /* New: Adjust width to consider padding */
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-sizing: border-box; /* New: Include padding and border in the element's total width and height */
+}
+
+input[type='submit']:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    input[type='submit'] {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.map {
+    flex-grow: 1; /* Map takes up remaining space */
+    /* Additional styles for the map */
+}
+
+.form-container {
+    width: 500px; /* Set the width of the form or max-width as needed */
+    /* Additional styles for the form container */
+}

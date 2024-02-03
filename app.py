@@ -27,6 +27,12 @@ def route_info():
 def routes():
     return jsonify(all_routes)
 
+@app.route('/scheduler')
+def scheduler(): 
+    # Fetch your routes data from your data source here
+    # routes_data = #INSERT ROUTE DATA HERE
+    return render_template('scheduler.html')
+
 if __name__ == '__main__':  
     app.run(debug=True)
 
