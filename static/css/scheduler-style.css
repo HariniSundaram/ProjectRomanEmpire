@@ -2,14 +2,16 @@
 /* Updated Global Settings with more color */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* Adding a gradient for more color */
     color: #333;
     line-height: 1.6;
     padding: 20px;
+    max-width: 800px;
     margin: auto;
-    height: 100vh;
-    display: flex; /* Remain as flex container */
-    /* Removed centering to allow items to align from left to right */
+    height: 100vh; /* New: Make the body take full viewport height */
+    display: flex; /* New: Using flexbox to center the form vertically */
+    justify-content: center; /* New: Center horizontally */
+    align-items: center; /* New: Center vertically */
 }
 
 h1 {
@@ -24,7 +26,7 @@ form {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    width: 90%; /* Make form width responsive */
+    width: 100%; /* Make form width responsive */
     max-width: 500px; /* New: Max width for form */
 }
 
@@ -34,6 +36,18 @@ label {
     margin-bottom: 5px;
 }
 
+.sidebar {
+    height: 100%;
+    width: 0; /* Width is 0 to hide the sidebar by default */
+    position: fixed; /* Fixed position */
+    z-index: 1001; /* Above the map */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Color of sidebar */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    transition: 0.5s; /* Smooth transition for opening/closing */
+    padding-top: 60px; /* Space for the menu icon */
+  }
 input[type='text'],
 input[type='number'],
 input[type='date'] {
@@ -50,6 +64,55 @@ input[type='number']:focus,
 input[type='date']:focus {
     border-color: #007bff;
     outline: none;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 5px;
+    right: 55px; /* Set right to position on the top right */
+    padding: 10px;
+    color: rgb(214, 207, 207);
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's on  top of other elements */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #a19f9f;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Ensure it's on top of other elements */
+    border-radius: 6px;
+    overflow: hidden;
+    top: 20px;  
+    right: 20px; /* Adjust the distance from the right */
+}
+
+.menu-icon {
+    position: absolute; /* Position it relative to the nearest positioned ancestor or to the document */
+    z-index: 1002; /* Above the sidebar */
+    top: 20px; /* 20px from the top */
+    left: 20px; /* 20px from the left */
+    cursor: pointer; /* Mouse cursor becomes pointer when hovered */
+    /* Add more styling as needed */
+  }
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.dropdown-content a:hover {
+    background-color: #a2a0a0;
+    border: 1px solid #7b7979;
+}
+
+.show {
+    display: block;
 }
 
 /* Button Styles */
@@ -80,14 +143,4 @@ input[type='submit']:hover {
         width: 100%;
         margin-left: 0;
     }
-}
-
-.map {
-    flex-grow: 1; /* Map takes up remaining space */
-    /* Additional styles for the map */
-}
-
-.form-container {
-    width: 500px; /* Set the width of the form or max-width as needed */
-    /* Additional styles for the form container */
 }

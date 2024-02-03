@@ -1,5 +1,7 @@
 
 <!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,14 +11,12 @@
 </head>
 <body>
     <!-- Map container where the map would be integrated -->
-    <div class="map">
-        <!-- Map content goes here -->
-    </div>
-    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script> -->
+    <!-- <script src="/static/js/scheduler.js" type="module"></script> -->
     <!-- Form container -->
     <div class="form-container">
         <h1>Schedule a New Delivery</h1>
-        <form id="deliveryForm">
+        <form id="deliveryForm" onsubmit="return handleSubmit()">
             <!-- Existing form content -->
             <div class="form-row">
                 <div class="form-group">
@@ -53,5 +53,20 @@
             <input type="submit" value="Submit">
         </form>
     </div>
+    <script>
+
+        function handleSubmit() {
+            // Prevent the default form submission
+            event.preventDefault();
+            // Show the pop-up message
+            alert("Data submitted to Model");
+            deliveryForm.reset();
+
+        
+        }
+    </script>
+    
+   
+
 </body>
 </html>
